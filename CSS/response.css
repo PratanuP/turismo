@@ -1,0 +1,20 @@
+@media screen and (max-width: 1050px) {
+  /* body {
+    background-color: red;
+  } */
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    justify-content: center;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  form {
+    max-width: 700px;
+  }
+}

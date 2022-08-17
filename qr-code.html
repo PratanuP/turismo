@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code for Turismo User</title>
+  </head>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/util.css" />
+  <link rel="stylesheet" href="CSS/response.css" />
+
+  <script async defer src="./JS/registerUser.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="IMAGES/logo.png" alt="" />
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-qr-code-container">
+      <div id="qrcode"></div>
+
+      <div>
+        <span id="uniqueId"></span>
+        <br />
+        Your Unique ID is valid for 3 months only.
+        <br />
+        Take a screenshot of this page for quicker access.
+      </div>
+    </main>
+
+    <footer>Copyright &copy; Cringe</footer>
+  </body>
+
+  <script>
+    const BASE_URL_CLIENT = "https://pratanup.github.io/turismo/";
+
+    let url = new URL(window.location.href);
+    let searchParams = new URLSearchParams(url.search);
+    const userId = searchParams.get("userId");
+
+    const qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: `${BASE_URL_CLIENT}/user.html?userId=${userId}`,
+      width: 128,
+      height: 128,
+      colorDark: "#000",
+      colorLight: "#fff",
+      //   correctLevel: QRCode.CorrectLevel.H,
+    });
+    document.querySelector("#uniqueId").innerHTML = userId;
+  </script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/util.css" />
+  <link rel="stylesheet" href="CSS/response.css" />
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="IMAGES/logo.png" alt="" />
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-qr-code-container">
+      <div id="userDetails"></div>
+    </main>
+
+    <footer>Copyright &copy; Cringe</footer>
+  </body>
+
+  <script>
+    const BASE_URL = "https://test-yu07.onrender.com/api";
+
+    let url = new URL(window.location.href);
+    let searchParams = new URLSearchParams(url.search);
+    const userId = searchParams.get("userId");
+
+    fetch(`${BASE_URL}/${userId}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res?.json())
+      .then((res) => {
+        console.log(res);
+        const {
+          firstName,
+          middleName,
+          lastName,
+          photoId,
+          photoIdNo,
+          gender,
+          phoneNumberCode,
+          phoneNumber,
+          address,
+          email,
+        } = res;
+
+        document.querySelector("#userDetails").innerHTML = `
+        <div>
+            <div>First Name: <span>${firstName}</span> </div>
+            <div>Middle Name: <span> ${middleName}</span></div>
+            <div>Last Name: <span> ${lastName}</span></div>
+
+            <div>Email: <span> ${email}</span></div>
+            <div>Phone Number: <span> ${phoneNumberCode} ${phoneNumber}</span></div>
+
+            <div>Photo Id: <span> ${photoId}</span></div>
+            <div>Photo Id No: <span> ${photoIdNo}</span></div>
+            
+            <div>Gender: <span> ${gender}</span></div>
+            <div>Address: <span>${address}</span></div>
+        </div>
+    `;
+      })
+      .catch((err) => console.log(err));
+  </script>
+</html>

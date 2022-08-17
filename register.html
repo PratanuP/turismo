@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Register on Turismo to get offers on hotel bookings and rented vehicles
+    </title>
+  </head>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/util.css" />
+  <link rel="stylesheet" href="CSS/response.css" />
+
+  <script async defer src="./JS/registerUser.js"></script>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="IMAGES/logo.png" alt="" />
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="flash">
+        <span>
+          Register on Turismo to avail exciting Travel Offers on Hotel Bookings,
+          Resturants, Rented Vehicles and so much more...
+        </span>
+      </div>
+      <form id="registerForm">
+        <div>
+          <label> Firstname : </label>
+          <input type="text" name="firstname" size="15" /> <br />
+        </div>
+
+        <div>
+          <label> Middlename : </label>
+          <input type="text" name="middlename" size="15" /> <br />
+        </div>
+
+        <div>
+          <label> Lastname : </label>
+          <input type="text" name="lastname" size="15" /> <br />
+        </div>
+
+        <div>
+          <label> Photo ID : </label>
+          <select>
+            <option value="PAN">PAN Card</option>
+            <option value="Vehicle License">Vehicle License</option>
+            <option value="Voter">Voter ID</option>
+            <option value="Aadhaar">Aadhaar Card</option>
+          </select>
+        </div>
+
+        <div>
+          <label> Photo ID No. : </label>
+          <input type="text" name="ID" size="20" /> <br />
+        </div>
+
+        <div>
+          <label> Gender : </label>
+          <select>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label> Phone : </label>
+          <div>
+            <!-- <input type="text" name="country code" value="+91" size="2" /> -->
+            <input type="number" id="phoneNo" name="phone" size="10" />
+          </div>
+        </div>
+
+        <div>
+          <label>Address : </label>
+          <textarea cols="80" rows="5" value="address"> </textarea>
+        </div>
+
+        <div>
+          <label> Email : </label>
+          <input type="email" id="email" name="email" /> <br />
+        </div>
+
+        <section>
+          <input type="submit" value="Submit" />
+        </section>
+      </form>
+    </main>
+    <footer>Copyright &copy; Cringe</footer>
+  </body>
+</html>
