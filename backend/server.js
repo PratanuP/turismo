@@ -1,7 +1,11 @@
+// framework lib
 const express = require("express");
+// domain
 const cors = require("cors");
+// database
 const mongoose = require("mongoose");
 
+// key
 const { MONGO_URI, PORT } = require("./config");
 
 // initialize express app
