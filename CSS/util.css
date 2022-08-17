@@ -1,7 +1,7 @@
 .btn {
   padding: 5px 10px;
   color: black;
-  /* background-color: var(--main-bg-color); */
+  background-color: #b889fb;
   border: 2px solid white;
   border-radius: 30px;
   cursor: pointer;
@@ -15,4 +15,5 @@
   float: left;
   max-width: 30%;
   height: auto;
+  border: 8px solid #000;
 }
