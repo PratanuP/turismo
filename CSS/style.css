@@ -377,6 +377,7 @@ h3 {
 #uniqueId {
   color: rgb(12, 207, 233);
   font-weight: bolder;
+  text-align: center;
 }
 
 #userDetails > div {
@@ -427,6 +428,7 @@ input[type="submit"] {
   font-size: 1.5rem;
   position: relative;
   bottom: 8.5px;
+  cursor: pointer;
 }
 
 input[type="text"],
